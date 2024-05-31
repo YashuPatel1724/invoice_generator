@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:invoice_generator/Dilog%20%20box/dilogebox.dart';
 import 'package:invoice_generator/Screen/add_product.dart';
 import 'package:invoice_generator/Screen/invoice.dart';
 
@@ -15,11 +16,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      // initialRoute: '/',
+      //
+      // routes: {
+      //   '/' : (context) => Product(),
+      //   '/in' : (context) => Invoice(),
+      // },
       initialRoute: '/',
 
       routes: {
-        '/' : (context) => Product(),
-        '/in' : (context) => Invoice(),
+        '/' : (context) => DilogeBox(),
       },
     );
   }
