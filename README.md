@@ -2,7 +2,7 @@
 
 <h3 align="center"Invoice Generator Video </h3>
 <div align="center">
- <video src="https://github.com/YashuPatel1724/Resume_Daily_Task/assets/148859965/80b866a6-587b-432c-a30c-c6f0cbc8ca38"> 
+ <video src="https://github.com/YashuPatel1724/invoice_generator/assets/148859965/38401fed-ba11-4c04-b5a8-1cec7e9dd4e1"> 
 </video>
 </div>
 
@@ -18,7 +18,7 @@
  <img height="550"  src="https://github.com/YashuPatel1724/invoice_generator/assets/148859965/0fa86773-adcb-4805-8df8-270dbedcb061" />
 </div>
 <div align="center">
-<a href="https://github.com/YashuPatel1724/Resume_Daily_Task/tree/master/lib/Login%20Page">-> 📂 Go To Dart File 📂 <-</a>
+<a href="https://github.com/YashuPatel1724/invoice_generator/tree/master/lib/Screen">-> 📂 Go To Dart File 📂 <-</a>
 </div>
 
 
