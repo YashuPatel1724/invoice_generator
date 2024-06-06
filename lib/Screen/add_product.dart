@@ -14,30 +14,18 @@ class _ProductState extends State<Product> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff1C1B1F),
       appBar: AppBar(
           title: Text(
             'Home Page',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
           ),
           actions: [
             TextButton(onPressed: () {
-              Navigator.of(context).pushNamed('/in');
-              setState(() {
-                for(int i=0; i<ProductList.length; i++)
-                {
-                  amount = (double.parse(ProductList[i].productPrice!.text) * (double.parse(ProductList[i].productQty!.text)));
-                  amountList.add(amount);
-
-                  total = total + amountList[i];
-                }
-                gst = total * 18/100;
-                pay = gst + total;
-              });
-            }, child: Text('Save',style: TextStyle(color: Colors.blue,fontSize: 25),))
+              Navigator.of(context).pushNamed('/edit');
+            }, child: Text('Save',style: TextStyle(color: Colors.lightBlueAccent,fontSize: 25),))
           ],
           centerTitle: true,
-          backgroundColor: Color(0xff1C1B1F)),
+      ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -61,7 +49,7 @@ class _ProductState extends State<Product> {
                   height: 50,
                   width: 230,
                   decoration: BoxDecoration(
-                      color: Colors.blue.shade900,
+                      color: Colors.lightBlueAccent,
                       borderRadius: BorderRadius.circular(50)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -86,7 +74,10 @@ class _ProductState extends State<Product> {
                height: 300,
                width: 280,
                decoration: BoxDecoration(
-                   border: Border.all(color: Colors.white, width: 2)),
+                 color: Colors.white10,
+                   border: Border.all(color: Colors.black, width: 2),
+                 borderRadius: BorderRadius.circular(15)
+               ),
                child: Padding(
                  padding: const EdgeInsets.only(top: 20.0, left: 10),
                  child: Column(
@@ -95,7 +86,7 @@ class _ProductState extends State<Product> {
                        children: [
                          Icon(
                            CupertinoIcons.cart,
-                           color: Colors.blue.shade900,
+                           color: Colors.lightBlueAccent,
                            size: 25,
                          ),
                          SizedBox(
@@ -104,7 +95,7 @@ class _ProductState extends State<Product> {
                          SizedBox(
                            width: 200,
                            child: TextFormField(
-                             style: TextStyle(color: Colors.white),
+                             style: TextStyle(color: Colors.black),
                              controller: ProductList[index].productName,
                              decoration: InputDecoration(
                                label: Text('product name'),
@@ -117,7 +108,7 @@ class _ProductState extends State<Product> {
                        children: [
                          Icon(
                            CupertinoIcons.cart,
-                           color: Colors.blue.shade900,
+                           color: Colors.lightBlueAccent,
                            size: 25,
                          ),
                          SizedBox(
@@ -126,7 +117,7 @@ class _ProductState extends State<Product> {
                          SizedBox(
                            width: 200,
                            child: TextFormField(
-                             style: TextStyle(color: Colors.white),
+                             style: TextStyle(color: Colors.black),
                              controller: ProductList[index].productQty,
                              decoration: InputDecoration(
                                label: Text('qty'),
@@ -138,7 +129,7 @@ class _ProductState extends State<Product> {
                      Row(
                        children: [
                          Icon(Icons.currency_rupee,
-                           color: Colors.blue.shade900,
+                           color: Colors.lightBlueAccent,
                            size: 25,
                          ),
                          SizedBox(
@@ -147,7 +138,7 @@ class _ProductState extends State<Product> {
                          SizedBox(
                            width: 200,
                            child: TextFormField(
-                             style: TextStyle(color: Colors.white),
+                             style: TextStyle(color: Colors.black),
                              controller: ProductList[index].productPrice,
                              decoration: InputDecoration(
                                label: Text('product price'),
@@ -161,24 +152,24 @@ class _ProductState extends State<Product> {
                        child: TextButton(
                            onPressed: () => showDialog(
                              context: context, builder: (context) => AlertDialog(
-                             backgroundColor: Color(0xff1C1B1F),
-                             title: Text('Delete',style: TextStyle(color: Colors.white),),
-                             content: Text('Delete your Product!',style: TextStyle(color: Colors.white),),
+                             backgroundColor: Colors.white,
+                             title: Text('Delete',style: TextStyle(color: Colors.black),),
+                             content: Text('Delete your Product!',style: TextStyle(color: Colors.black),),
                              actions: [
                                TextButton(onPressed: () {
                                  Navigator.pop(context);
-                               }, child: Text('Cancle')),
+                               }, child: Text('Cancle',style: TextStyle(color: Colors.lightBlue),)),
                                TextButton(onPressed: () {
                                  setState(() {
                                    ProductList.removeAt(index);
                                  });
                                  Navigator.pop(context);
-                               }, child: Text('Ok'))
+                               }, child: Text('Ok',style: TextStyle(color: Colors.lightBlue),))
                              ],
 
                            ),
                            ),
-                           child: Text('Remove',style: TextStyle(color: Colors.white,fontSize: 20),)),
+                           child: Text('Remove',style: TextStyle(color: Colors.lightBlueAccent,fontSize: 20),)),
                      )
                    ],
                  ),
